@@ -1,0 +1,25 @@
+// Fonts
+$font-primary: 'Poppins', sans-serif;
+$font-display: 'Orbitron', sans-serif;
+
+// Galactic Glam Color Palette
+$color-dark-primary: #0D0221;    // Ungu-hitam pekat
+$color-dark-secondary: #0F084B;  // Biru tua
+$color-purple: #26175C;        // Ungu
+$color-blue-accent: #00C4FF;     // Biru elektrik
+$color-pink-accent: #FF00E4;     // Pink neon
+
+// Premium Metal Accents
+$color-gold: #FFD700;
+$color-silver: #C0C0C0;
+
+// Text Colors
+$text-light: #F0F0F0;
+$text-dark: #1a1a1a;
+$text-muted: #a9a9a9;
+
+// Effects
+$glow-effect-blue: 0 0 5px $color-blue-accent, 0 0 10px $color-blue-accent, 0 0 15px $color-blue-accent;
+$glow-effect-gold: 0 0 8px $color-gold;
+$box-shadow-card: 0 10px 30px rgba($color-dark-primary, 0.5);
+$border-radius-main: 15px;
