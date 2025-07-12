@@ -168,35 +168,7 @@ a {
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
   }
-}```
-
----
-
-### 3. Cara Menggunakan Komponen Ini
-
-Sekarang komponen `PaymentInfo` Anda sudah siap digunakan di halaman mana pun. Misalnya, Anda bisa membuat halaman khusus untuk "Top Up Saldo" atau "Cara Pembayaran".
-
-**Contoh: Membuat halaman `src/pages/TopUpPage.jsx`**
-
-```jsx
-import React from 'react';
-import PaymentInfo from '../components/PaymentInfo'; // Import komponennya
-
-export default function TopUpPage() {
-    return (
-        <div>
-            <header className="header-container">
-                <h1>Top Up Saldo / Donasi</h1>
-            </header>
-            <main>
-                {/* Cukup panggil komponennya seperti ini */}
-                <PaymentInfo />
-            </main>
-        </div>
-    );
 }
-
-
 
 /* ================================ */
 /* == STYLING UNTUK ADMIN PANEL  == */
