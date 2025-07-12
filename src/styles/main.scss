@@ -196,3 +196,113 @@ export default function TopUpPage() {
     );
 }
 
+
+
+/* ================================ */
+/* == STYLING UNTUK ADMIN PANEL  == */
+/* ================================ */
+
+.admin-panel {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.admin-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  h1 {
+    color: #343a40;
+  }
+  p {
+    color: #6c757d;
+    font-size: 1.1rem;
+  }
+}
+
+.request-section {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+
+  h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.table-container {
+  overflow-x: auto; // Agar bisa di-scroll di layar kecil
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+
+  th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover {
+    background-color: #f1f3f5;
+  }
+}
+
+.amount {
+  font-weight: 600;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: white;
+
+  &.status-pending { background-color: #ffc107; color: #333; }
+  &.status-approved, &.status-completed { background-color: #28a745; }
+  &.status-rejected { background-color: #dc3545; }
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  
+  button {
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.btn-approve {
+  background-color: #28a745; // Hijau
+}
+
+.btn-reject {
+  background-color: #dc3545; // Merah
+}
