@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async'; // DIUBAH: Menggunakan Helmet untuk proyek Vite/React
 import ItemGallery from '../components/ItemGallery';
 import ConfirmationModal from '../components/ConfirmationModal';
-import Head from 'next/head'; // Jika Anda menggunakan Next.js
 
 // --- DATABASE ITEM ANDA (LENGKAP DENGAN URL CDN) ---
 const itemsData = [
@@ -61,6 +61,8 @@ export default function TokoPage() {
 
         if (userBalance >= selectedItem.price) {
             setUserBalance(currentBalance => currentBalance - selectedItem.price);
+            // Di aplikasi nyata, Anda akan mengirim ini ke server.
+            // Untuk sekarang, alert sudah cukup.
             alert(`Berhasil mengirim hadiah "${selectedItem.name}"!`);
         } else {
             alert('Maaf, saldo Anda tidak mencukupi.');
@@ -71,9 +73,10 @@ export default function TokoPage() {
 
     return (
         <>
-            <Head>
-                <title>Toko Hadiah Virtual</title>
-            </Head>
+            {/* DIUBAH: Menggunakan komponen Helmet untuk mengatur judul halaman */}
+            <Helmet>
+                <title>Toko Hadiah Virtual | Karaoke Bersama</title>
+            </Helmet>
 
             <header className="header-container">
                 <h1>Kirim Hadiah Simpatik</h1>
