@@ -49,3 +49,33 @@ a {
 ::-webkit-scrollbar-thumb:hover {
   background: $color-blue-accent;
 }
+
+
+/* File: src/styles/main.scss (Gabungan) */
+
+// Semua styling lama Anda ada di bagian atas ini
+// Misalnya, variabel warna Sass, styling navbar, dll.
+// JANGAN HAPUS BAGIAN INI
+
+.navbar {
+  // ... styling navbar Anda ...
+}
+
+
+/* ======================================= */
+/* == STYLING UNTUK HALAMAN TOKO HADIAH == */
+/* ======================================= */
+/* Tempel semua kode CSS baru dari Gemini di sini */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #007bff;
+    /* ... dan seterusnya ... */
+}
+
+.gallery-container {
+    /* ... */
+}
+
+/* ... dan semua kode lainnya sampai akhir ... */
