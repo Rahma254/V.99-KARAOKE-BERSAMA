@@ -420,3 +420,37 @@ table {
     background-color: #0056b3;
   }
 }
+
+
+/* ================================ */
+/* == STYLING UNTUK HALAMAN LOGIN == */
+/* ================================ */
+
+.login-page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  
+  h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+.error-message {
+  color: #dc3545;
+  text-align: center;
+  margin-bottom: 1rem;
+}
