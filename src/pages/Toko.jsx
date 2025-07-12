@@ -1,25 +1,44 @@
 import { useState } from 'react';
-import ItemGallery from '../components/ItemGallery'; // Kita akan buat ini
-import ConfirmationModal from '../components/ConfirmationModal'; // Dan ini juga
-import Head from 'next/head'; // Opsional, untuk SEO di Next.js
+import ItemGallery from '../components/ItemGallery';
+import ConfirmationModal from '../components/ConfirmationModal';
+import Head from 'next/head'; // Jika Anda menggunakan Next.js
 
-// --- DATABASE ITEM ANDA ---
-// Untuk kerapian, ini bisa juga dipisah ke file sendiri, misal: src/data/items.js
+// --- DATABASE ITEM ANDA (LENGKAP DENGAN URL CDN) ---
 const itemsData = [
     { id: 'boxing-glove', name: 'Boxing Glove', price: 50, imageUrl: 'https://img.icons8.com/emoji/48/boxing-glove-emoji.png' },
     { id: 'badminton', name: 'Badminton', price: 20, imageUrl: 'https://img.icons8.com/emoji/48/badminton-emoji.png' },
     { id: 'bullseye', name: 'Bullseye', price: 100, imageUrl: 'https://img.icons8.com/emoji/48/bullseye.png' },
-    // ... (salin sisa data item dari script sebelumnya di sini) ...
+    { id: 'chess-pawn', name: 'Chess Pawn', price: 75, imageUrl: 'https://img.icons8.com/emoji/48/chess-pawn.png' },
+    { id: 'japanese-dolls', name: 'Japanese Dolls', price: 500, imageUrl: 'https://img.icons8.com/emoji/48/japanese-dolls.png' },
+    { id: 'kite', name: 'Kite', price: 1000, imageUrl: 'https://img.icons8.com/emoji/48/kite-.png' },
+    { id: 'nesting-dolls', name: 'Nesting Dolls', price: 2000, imageUrl: 'https://img.icons8.com/emoji/48/nesting-dolls.png' },
+    { id: 'teddy-bear', name: 'Teddy Bear', price: 3000, imageUrl: 'https://img.icons8.com/emoji/48/teddy-bear-.png' },
+    { id: 'ant', name: 'Ant', price: 5000, imageUrl: 'https://img.icons8.com/emoji/48/ant-emoji.png' },
+    { id: 'butterfly', name: 'Butterfly', price: 7000, imageUrl: 'https://img.icons8.com/emoji/48/butterfly-emoji.png' },
+    { id: 'dog-face', name: 'Dog Face', price: 9000, imageUrl: 'https://img.icons8.com/emoji/48/dog-face.png' },
+    { id: 'elephant', name: 'Elephant', price: 10000, imageUrl: 'https://img.icons8.com/emoji/48/elephant-emoji.png' },
+    { id: 'ewe', name: 'Ewe', price: 12000, imageUrl: 'https://img.icons8.com/emoji/48/ewe-emoji.png' },
+    { id: 'fly', name: 'Fly', price: 3000, imageUrl: 'https://img.icons8.com/emoji/48/fly-emoji.png' },
+    { id: 'fox', name: 'Fox', price: 15000, imageUrl: 'https://img.icons8.com/emoji/48/fox-emoji.png' },
+    { id: 'goat', name: 'Goat', price: 7000, imageUrl: 'https://img.icons8.com/emoji/48/goat-emoji.png' },
+    { id: 'gorilla', name: 'Gorilla', price: 25000, imageUrl: 'https://img.icons8.com/emoji/48/gorilla-emoji.png' },
+    { id: 'hatching-chick', name: 'Hatching Chick', price: 75000, imageUrl: 'https://img.icons8.com/emoji/48/hatching-chick--v2.png' },
+    { id: 'hibiscus', name: 'Hibiscus', price: 20000, imageUrl: 'https://img.icons8.com/emoji/48/hibiscus.png' },
+    { id: 'kangaroo', name: 'Kangaroo', price: 6000, imageUrl: 'https://img.icons8.com/emoji/48/kangaroo-emoji.png' },
+    { id: 'lotus', name: 'Lotus', price: 1000, imageUrl: 'https://img.icons8.com/emoji/48/lotus-emoji.png' },
+    { id: 'monkey', name: 'Monkey', price: 50000, imageUrl: 'https://img.icons8.com/emoji/48/monkey--v1.png' },
+    { id: 'mouse', name: 'Mouse', price: 15000, imageUrl: 'https://img.icons8.com/emoji/48/mouse-body-emoji.png' },
+    { id: 'parrot', name: 'Parrot', price: 3000, imageUrl: 'https://img.icons8.com/emoji/48/parrot-emoji.png' },
+    { id: 'penguin', name: 'Penguin', price: 30000, imageUrl: 'https://img.icons8.com/emoji/48/penguin--v2.png' },
+    { id: 'pig', name: 'Pig', price: 100000, imageUrl: 'https://img.icons8.com/emoji/48/pig-emoji.png' },
+    { id: 'rose', name: 'Rose', price: 2000, imageUrl: 'https://img.icons8.com/emoji/48/rose-emoji.png' },
     { id: 'sauropod', name: 'Sauropod', price: 5000, imageUrl: 'https://img.icons8.com/emoji/48/sauropod.png' }
 ];
 
 export default function TokoPage() {
-    // State untuk mengelola saldo pengguna
     const [userBalance, setUserBalance] = useState(250000); 
-    // State untuk mengelola modal konfirmasi
     const [selectedItem, setSelectedItem] = useState(null);
 
-    // Fungsi untuk memformat angka menjadi Rupiah
     const formatRupiah = (number) => {
         return new Intl.NumberFormat('id-ID', {
             style: 'currency',
@@ -43,7 +62,6 @@ export default function TokoPage() {
         if (userBalance >= selectedItem.price) {
             setUserBalance(currentBalance => currentBalance - selectedItem.price);
             alert(`Berhasil mengirim hadiah "${selectedItem.name}"!`);
-            // TODO: Tambahkan logika kirim notifikasi ke backend/host
         } else {
             alert('Maaf, saldo Anda tidak mencukupi.');
         }
@@ -68,7 +86,6 @@ export default function TokoPage() {
                 <ItemGallery items={itemsData} onItemClick={handleItemClick} formatRupiah={formatRupiah} />
             </main>
 
-            {/* Modal akan muncul jika ada item yang dipilih */}
             {selectedItem && (
                 <ConfirmationModal
                     item={selectedItem}
