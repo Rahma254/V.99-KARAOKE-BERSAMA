@@ -1,4 +1,6 @@
-@import 'variables';
+// Menggunakan sintaks modern '@use' untuk menghindari warning.
+// Pastikan file _variables.scss Anda dinamai persis seperti ini (dengan underscore).
+@use 'variables' as *;
 
 * {
   margin: 0;
